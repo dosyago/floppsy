@@ -1,0 +1,31 @@
+{
+  "name": "tifuhash",
+  "version": "1.0.0",
+  "description": "Tiny Fast Universal Hash",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dosaygo-coder-0/tifuhash.git"
+  },
+  "keywords": [
+    "tifuhash",
+    "universal",
+    "hash",
+    "hash",
+    "function",
+    "string",
+    "hash",
+    "integer",
+    "hash",
+    "avalanche"
+  ],
+  "author": "Kris <dontmailme@gmail.com> (https://2yago.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dosaygo-coder-0/tifuhash/issues"
+  },
+  "homepage": "https://github.com/dosaygo-coder-0/tifuhash#readme"
+}
