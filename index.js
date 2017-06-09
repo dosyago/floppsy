@@ -92,9 +92,9 @@
 
   // Evaluation ( 16 Mb ) self iteration to output file 
 
-    function evaluate() {
+    function evaluate( fileName ) {
       try {
-        if ( ! process.argv[2] ) {
+        if ( ! process.argv[2] && ! fileName ) {
           console.warn( "Filename for output required" ); 
           return;
         }
@@ -102,6 +102,7 @@
         console.warn("Evaluate only runs at the command line in Node.");
         return;
       }
+      fileName = fileName || process.argv[2];
       const fs = require('fs'); 
       let batch = 1<<10;
       let i = 1<<24 >> 3;
@@ -109,7 +110,7 @@
       let HASH = '';
       while( i-- ) {
         if ( str.length == batch ) {
-          fs.appendFileSync( process.argv[2], str, 'binary' );
+          fs.appendFileSync( fileName, str, 'binary' );
           str = '';
         }
         HASH = hash( HASH + i, { out_format : 'binary' } ); // 8 bytes 
