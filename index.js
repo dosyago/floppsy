@@ -34,7 +34,7 @@
     state[0] += (last_val + index +  1 ) / ( index + 2 + val );
     state[0] = 1.0 / state[0];
     state[1] += val;
-    state[1] = (1.0 + index) / state[1];
+    state[1] = (1.0 + index + last_val) / state[1];
     //console.log( `After value ${val} at index ${index}, state is ${state[0]}, ${state[1]}` );
   }
 
