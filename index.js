@@ -31,15 +31,11 @@
 
   // Continued Fractions Hashing 
   function q( state, val, numerator, denominator ) {
-
     state[0] += numerator / denominator;
     state[0] = 1.0 / state[0];
 
     state[1] += val;
     state[1] = numerator / state[1];
-
-    //console.log( `After value ${val} at index ${index}, state is ${state[0]}, ${state[1]}` );
-
   }
 
   function round( msg, state ) {
