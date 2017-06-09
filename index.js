@@ -59,9 +59,16 @@
 
     function setup( state, init ) {
 
-      if ( !! init ) {
-        //console.log( "Init", init );
-      }
+      // The logic of this is
+      // raising to a fractional power will tend to make a large number smaller
+      // or a small fraction larger
+      // So fractional power raising takes care of two key weaknesses in 
+      // version 1.0.3 - numbers such as : 1e17 and also 1e-17
+      // The addition of init + 1.0/init is probably less necessary now
+      // That we combine the entire float state ( using state32 view )
+      // Instead of discarding the high order bits as we did previously
+      // The point of this summation was to ensure that high order bits ( large numbers )
+      // Could have an effect, by making them proportionately small
       state[0] = init ? Math.pow(init + 1.0/init, 1.0/3) : 3;
       state[1] = init ? Math.pow(init + 1.0/init, 1.0/7) : 1/7;
 
@@ -77,23 +84,26 @@
       if ( typeof msg == 'string' ) {
         msg = msg.split('').map( v => v.charCodeAt(0) );
       } else if ( typeof msg == 'number' ) {
-        // TODO: consider improving how we hash a number
-        // perhaps by incorporation it into the state somehow
         number = true;
         msg = [ msg ];
       }
 
       const buf = new ArrayBuffer(16);
       const state = new Float64Array(buf);
+      // A new addition, used for combining the high order bits
+      const state32 = new Uint32Array(buf);
 
+      // Include the number in state initialization
       setup( state, number ? msg[0] : null );
       round( msg, state );
 
-      const state32 = new Uint32Array(buf);
       const output = new ArrayBuffer(8);
       const h = new Uint32Array(output);
-      h[0] = state32[0] ^ state32[1];
-      h[1] = state32[2] ^ state32[3];
+
+      // The new combination step
+      h[0] = state32[0] + state32[3];
+      h[1] = state32[1] + state32[2];
+
       let result = '';
       if ( out_format == 'hex' ) {
         result += pad( 8, h[0].toString(16));
