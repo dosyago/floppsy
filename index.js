@@ -1,65 +1,84 @@
 // 64 bit hashes
 "use strict";
 {
+  test();
+  evaluate();
+
   function evaluate() {
+    if ( ! process.argv[2] ) {
+      console.warn( "Filename for output required" ); 
+      return;
+    }
     const fs = require('fs'); 
     let batch = 1<<10;
-    let i = 1<<20 >> 3;
+    let i = 1<<24 >> 3;
     let str = '';
+    let HASH = '';
     while( i-- ) {
       if ( str.length == batch ) {
         fs.appendFileSync( process.argv[2], str, 'binary' );
         str = '';
       }
-      const HASH = hash( HASH + i ); // 8 bytes 
+      HASH = hash( HASH + i, { out_format : 'binary' } ); // 8 bytes 
       str += HASH;
     }
   }
 
-  // THIS IS DESIGNED TO BE MEMORABLE
-  function hash( msg ) {
-    const X_0 = 77777777;
-    const Y_0 = 55555555;
-    const Z_0 = 33333333;
-    const M_X = 85; // 01010101
-    const M_Y = 43; // 85 >> 1 + 1
-    const M_Z = 37; // 42 >> 1 == 21 == 3 * 7, so 37 :)
-    msg = msg.split('');
-    const state = Uint32Array(2);
-    state[0] = Y_0;
-    state[1] = Z_0;
-    const reg = Uint32Array(2); // 2 x 32 bit 'register' ( to avoid JS integer imprecision with large values )
-    while( msg.length ) {
-      // FIXME : handle unicode correctly
-      const chunk = msg.splice( 0, 4 ).map( c => c.codePointAt(0) );
-      // Note : These index never get to zero 
-      const index = [ message.length, message.length - 1, message.length - 2, message.length - 3];
-
-      // MIX the chunks values and the indexes together
-      // sum( chunk_i * index_i * M_X ) // simple
-      // Using the registers
-
-      reg[0] = X_0;
-      reg[1] = chunk[0] * index[0] * M_X;
-      reg[0] += reg[1];
-      reg[1] = chunk[1] * index[1] * M_X;
-      reg[0] += reg[1];
-      reg[1] = chunk[2] * index[2] * M_X;
-      reg[0] += reg[1];
-      reg[1] = chunk[3] * index[3] * M_X;
-      reg[0] += reg[1];
-
-      // update the state
-      state[0] = (state[0] * M_Y) + reg[0];
-      state[1] = (state[1] * M_Z) + reg[0];
-
-      // Up to this point we just have a pretty much standard
-      // Bernstein / Kernighan / Java <String>.hashCode hash
-      // Here's where the fun begins
-       
-
-    }
-
+  function pad( width, str ) {
+    const padding = new Array( Math.max( 0, width - str.length ) + 1 ).join('0');
+    return padding + str;
   }
 
+  // Continued Fractions Hashing 
+  function q( state, last_val, val, index ) {
+    state[0] += (last_val + index +  1 ) / ( index + 2 + val );
+    state[0] = 1.0 / state[0];
+    state[1] += val;
+    state[1] = (1.0 + index) / state[1];
+    //console.log( `After value ${val} at index ${index}, state is ${state[0]}, ${state[1]}` );
+  }
+
+  function round( msg, state ) {
+    let last_val = 1;
+    msg.forEach( (val,index) => ( q(state, last_val, val, index), last_val = val ) );
+    q(state,last_val, 3,0); 
+    q(state,3,2, 1);
+    q(state,2,1, 2);
+  }
+
+  function setup( state ) {
+    state[0] = 3;
+    state[1] = 1/7;
+  }
+
+  function hash( msg = '', { out_format : out_format = 'hex' } = {}) {
+    msg = msg.split('').map( v => v.charCodeAt(0) );
+    const buf = new ArrayBuffer(16);
+    const state = new Float64Array(buf);
+
+    setup( state );
+    round( msg, state );
+
+    const output = new Uint8Array(buf);
+    let bytes = '';
+    if ( out_format == 'hex' ) {
+      output.slice(0,4).forEach( v => bytes += pad( 2, v.toString(16) ) );
+      output.slice(8,12).forEach( v => bytes += pad( 2, v.toString(16) ) );
+    } else if ( out_format == 'binary' ) {
+      output.slice(0,4).forEach( v => bytes += String.fromCharCode(v) );
+      output.slice(8,12).forEach( v => bytes += String.fromCharCode(v) );
+    }
+    return bytes;
+  }
+
+  function test() {
+    console.log( pad( 10, '' ), hash() );
+    console.log( pad( 10, 'abc'), hash('abc') );
+    console.log( pad( 10, 'abd'), hash('abd') );
+    console.log( pad( 10, 'cris'), hash('cris') );
+  }
+
+  module.exports = {
+    hash, evaluate
+  };
 }
