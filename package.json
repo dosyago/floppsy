@@ -1,6 +1,6 @@
 {
   "name": "tifuhash",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Tiny Fast Universal Hash",
   "main": "index.js",
   "scripts": {
