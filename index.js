@@ -20,6 +20,8 @@
       // Standard Continued Fraction with a_i = val, b_i = (a_i-1) + i + 1
       state[1] += val;
       state[1] = numerator / state[1];
+
+      //console.log( "state", state[0], state[1] );
     }
 
   // Continued Fractions Hashing - Hash round function 
@@ -42,20 +44,28 @@
         // The point of the following commented out code
         // was to handle the empty message
         // And do some final transformation after the message is complete
-      /*
-        q(state,last_val, 3,0); 
-        q(state,3,2, 1);
-        q(state,2,1, 2);
-      */
+
+        state[0] *= Math.PI + state[1];
+        state[1] *= Math.E + state[0];
+
+          /*
+          q(state,Math.PI,2,3);
+          q(state,Math.E,5,7);
+          */
 
     }
 
   // Setup the state 
 
-    function setup( state ) {
+    function setup( state, init ) {
 
-      state[0] = 3;
-      state[1] = 1/7;
+      if ( !! init ) {
+        //console.log( "Init", init );
+      }
+      state[0] = init ? Math.pow(init + 1.0/init, 1.0/3) : 3;
+      state[1] = init ? Math.pow(init + 1.0/init, 1.0/7) : 1/7;
+
+      //console.log( "state", state[0], state[1] );
 
     }
 
@@ -63,30 +73,36 @@
 
     function hash( msg = '', { out_format : out_format = 'hex' } = {}) {
 
+      let number = false;
       if ( typeof msg == 'string' ) {
         msg = msg.split('').map( v => v.charCodeAt(0) );
       } else if ( typeof msg == 'number' ) {
         // TODO: consider improving how we hash a number
         // perhaps by incorporation it into the state somehow
+        number = true;
         msg = [ msg ];
       }
 
       const buf = new ArrayBuffer(16);
       const state = new Float64Array(buf);
 
-      setup( state );
+      setup( state, number ? msg[0] : null );
       round( msg, state );
 
-      const output = new Uint8Array(buf);
-      let bytes = '';
+      const state32 = new Uint32Array(buf);
+      const output = new ArrayBuffer(8);
+      const h = new Uint32Array(output);
+      h[0] = state32[0] ^ state32[1];
+      h[1] = state32[2] ^ state32[3];
+      let result = '';
       if ( out_format == 'hex' ) {
-        output.slice(0,4).forEach( v => bytes += pad( 2, v.toString(16) ) );
-        output.slice(8,12).forEach( v => bytes += pad( 2, v.toString(16) ) );
+        result += pad( 8, h[0].toString(16));
+        result += pad( 8, h[1].toString(16));
       } else if ( out_format == 'binary' ) {
-        output.slice(0,4).forEach( v => bytes += String.fromCharCode(v) );
-        output.slice(8,12).forEach( v => bytes += String.fromCharCode(v) );
+        const bytes = new Uint8Array(output);
+        bytes.forEach( v => result += String.fromCharCode(v) );
       }
-      return bytes;
+      return result;
 
     }
 
