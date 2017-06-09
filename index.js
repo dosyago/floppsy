@@ -57,11 +57,14 @@
   }
 
   function setup( state ) {
+
     state[0] = 3;
     state[1] = 1/7;
+
   }
 
   function hash( msg = '', { out_format : out_format = 'hex' } = {}) {
+
     msg = msg.split('').map( v => v.charCodeAt(0) );
     const buf = new ArrayBuffer(16);
     const state = new Float64Array(buf);
@@ -79,13 +82,16 @@
       output.slice(8,12).forEach( v => bytes += String.fromCharCode(v) );
     }
     return bytes;
+
   }
 
   function test() {
+
     console.log( pad( 10, '' ), hash() );
     console.log( pad( 10, 'abc'), hash('abc') );
     console.log( pad( 10, 'abd'), hash('abd') );
     console.log( pad( 10, 'cris'), hash('cris') );
+
   }
 
   module.exports = {
