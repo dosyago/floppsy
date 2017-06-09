@@ -30,20 +30,34 @@
   }
 
   // Continued Fractions Hashing 
-  function q( state, last_val, val, index ) {
-    state[0] += (last_val + index +  1 ) / ( index + 2 + val );
+  function q( state, val, numerator, denominator ) {
+
+    state[0] += numerator / denominator;
     state[0] = 1.0 / state[0];
+
     state[1] += val;
-    state[1] = (1.0 + index + last_val) / state[1];
+    state[1] = numerator / state[1];
+
     //console.log( `After value ${val} at index ${index}, state is ${state[0]}, ${state[1]}` );
+
   }
 
   function round( msg, state ) {
-    let last_val = 1;
-    msg.forEach( (val,index) => ( q(state, last_val, val, index), last_val = val ) );
-    q(state,last_val, 3,0); 
-    q(state,3,2, 1);
-    q(state,2,1, 2);
+
+    let numerator = 1;
+    msg.forEach( (val,index) => {
+      const pos = index + 1.0;
+      const denominator = val + pos; 
+      q(state, val, numerator, denominator); 
+      numerator = denominator;
+    });
+
+    /*
+      q(state,last_val, 3,0); 
+      q(state,3,2, 1);
+      q(state,2,1, 2);
+    */
+
   }
 
   function setup( state ) {
