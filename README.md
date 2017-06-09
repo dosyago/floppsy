@@ -5,7 +5,7 @@ TIny Fast Universal Hash - that's the aim anyway
 # Construction
 
 - Novel: Based on continued fractions and Egyptian fractions
-- Small: Uses two 64 bit floating point integers for calculation
+- Small: Uses two 64 bit floating point numbers for calculation
 - Versatile: Can hash arbitrary length string messages, integers and floats
 - Fast: Apart from using 64 bit FPA, it has only a few operations per message byte ( it can probably be efficiently implemented in hardware)
 - Amazing Properties: Somehow, this tiny, maths-operation-only hash passess PractRand ( WTF! ), when iterated on its own output and when the *entire* resulting hash stream is concatenated together to make a binary output.
