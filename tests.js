@@ -1,6 +1,7 @@
 "use strict";
 {
-  dchest_tests();
+  //dchest_tests();
+  smhasher_verification_value();
 
   function dchest_tests() {
     const t = require('./index.js');
@@ -69,5 +70,35 @@
         console.log( `Case ${i} altered: ${r} !== ${c.h}` );   
       }
     });
+  }
+
+  function smhasher_verification_value() {
+    const t = require('./index.js');
+
+    // Copied from <smhasher_repo>/src/KeysetTests.cpp
+    
+    const hashbytes = 8;
+    const key = new Uint8Array( 256 );
+    const hashes = new Uint8Array( 256 * hashbytes );
+    const final = new Uint8Array( hashbytes );
+    const spec8 = {
+      out_format: 'uint8array',
+    };
+
+
+    // Hash keys of the form {0}, {0,1}, {0,1,2}... up to N=255,using 256-N as
+    // the seed
+    for ( let i = 0; i < 256; i++ ) {
+      key[i] = i;
+
+      const hash = t.hash(key.slice(0,i), spec8 );
+      hashes.set( hash, i*hashbytes );
+    }
+
+    // Then hash the result array
+  
+    const final = t.hash(hashes,{ out_format: 'uint32array' });
+
+    return final[0].toString(16);
   }
 }
