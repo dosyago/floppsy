@@ -91,6 +91,9 @@
     for ( let i = 0; i < 256; i++ ) {
       key[i] = i;
 
+      // FIXME : we must decide a way to create include seed value 
+      const seed = 256-i;
+
       const hash = t.hash(key.slice(0,i), spec8 );
       hashes.set( hash, i*hashbytes );
     }
