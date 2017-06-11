@@ -1,0 +1,1 @@
+cat $1 | ../rng_tests/RNG_test stdin -a -tlmax 24 -tlmaxonly

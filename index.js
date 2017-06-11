@@ -13,25 +13,22 @@
 
     function q( state, val, numerator, denominator ) {
       // Continued Fraction mixed with Egyptian fraction "Continued Egyptian Fraction"
-      // with denominator = val + pos
+      // with denominator = val + pos / state[1]
       state[0] += numerator / denominator;
       state[0] = 1.0 / state[0];
 
       // Standard Continued Fraction with a_i = val, b_i = (a_i-1) + i + 1
       state[1] += val;
       state[1] = numerator / state[1];
-
-      //console.log( "state", state[0], state[1] );
     }
 
   // Continued Fractions Hashing - Hash round function 
 
     function round( msg, state ) {
-
       let numerator = 1;
       msg.forEach( (val,index) => {
         const pos = index + 1.0;
-        const denominator = val + pos; 
+        const denominator = (val + pos) / state[1]; 
 
         q(state, val, numerator, denominator); 
 
@@ -40,36 +37,22 @@
         numerator = denominator;
       });
 
-      // TODO: devise a new step here
-        // The point of the following commented out code
-        // was to handle the empty message
-        // And do some final transformation after the message is complete
-
-        state[0] *= Math.PI + state[1];
-        state[1] *= Math.E + state[0];
-
-          /*
-          q(state,Math.PI,2,3);
-          q(state,Math.E,5,7);
-          */
-
+      state[0] *= Math.PI + state[1];
+      state[1] *= Math.E + state[0];
     }
 
   // Setup the state 
 
     function setup( state, init ) {
-
       state[0] = init ? Math.pow(init + 1.0/init, 1.0/3) : 3;
       state[1] = init ? Math.pow(init + 1.0/init, 1.0/7) : 1/7;
 
       //console.log( "state", state[0], state[1] );
-
     }
 
   // Hash Function 
 
     function hash( msg = '', { out_format : out_format = 'hex' } = {}, seed = 0) {
-
       //console.log( "seed?", seed );
       let number = false;
       if ( typeof msg == 'string' ) {
@@ -109,7 +92,6 @@
         result = h;
       }
       return result;
-
     }
 
   // Evaluation ( 16 Mb ) self iteration to output file 
@@ -130,6 +112,7 @@
       let i = 1<<24 >> 3;
       let str = '';
       let HASH = '';
+
       while( i-- ) {
         if ( str.length == batch ) {
           fs.appendFileSync( fileName, str, 'binary' );
@@ -143,12 +126,10 @@
   // Test
 
     function test() {
-
       console.log( pad( 10, '' ), hash() );
       console.log( pad( 10, 'abc'), hash('abc') );
       console.log( pad( 10, 'abd'), hash('abd') );
       console.log( pad( 10, 'cris'), hash('cris') );
-
     }
 
   // String padding 
