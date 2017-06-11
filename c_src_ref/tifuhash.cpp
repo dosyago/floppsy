@@ -37,7 +37,7 @@ FORCE_INLINE void round ( const uint8_t * msg, long len,
   // Loop
   for( long i = 0; i < len; i++ ) {
     double val = (double)msg[i];
-    double denominator = val + 1.0 + i;
+    double denominator = (val + 1.0 + i) / state[1];
 
     q( state, val, numerator, denominator );
 
