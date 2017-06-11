@@ -49,16 +49,18 @@ The test results for SMHasher are in [tifuhash.smhasher.results.txt](https://git
  - Because it has good properties ( independence of bits as demonstrated by passing PractRand ), and can be parameterized, we hypothesize that it is universal, possibly even strongly universal.
  - Tiny: Yep, it's memorizable and only a few lines of code
  
- # Tifuhash limitations and opportunities for improvement
+ ## Tifuhash limitations and opportunities for improvement
  
   - current implementations are very slow compared to existing hash functions, even tho the code is simple
     - this can probably be improved in optimized implementations, but floating point sets a hard limit on how fast tifuhash can be
   - uses floating point extensively, so hashes can differ depending on implementation and architecture
     - this may be able to be improved using techniques developed to allow other floating point dependent calculations to be reproducible across languages and architectures
  
- # Parameterization
- 
- No API for parameterization as yet, but that will come. Also no built in method for generating real entropy in order to form parameters to universal hash parameterization, but that will probably come, or use code I developed for `dosycrypt`
+ # Parameterization and Universality
+
+ Universal hash algorithms define a family of hash algorithms. Tifuhash is designed to be universal, and while not API for parameterizing the algorithm is available yet, that will come. I think we can probably use the "seed" construction, used by SMHasher, to setup the intial state, as one way to explore parameterization. Accepting seeds into the initial state is already implemented in the C++ reference code.
+
+ Also no built in method for generating real entropy in order to form parameters to universal hash parameterization, but that will probably come, or use code I developed for `dosycrypt`
  
  # Links
 
