@@ -63,3 +63,25 @@ Testing 11017632 up-to-4-bit differentials in 128-bit keys -> 64 bit hashes.
 
 1000 reps, 11017632000 total tests, expecting 0.00 random collisions..........
 0 total collisions, of which 0 single collisions were ignored
+
+Testing 2796416 up-to-3-bit differentials in 256-bit keys -> 64 bit hashes.
+
+1000 reps, 2796416000 total tests, expecting 0.00 random collisions..........
+261730 total collisions, of which 6493 single collisions were ignored !!!!! 
+
+*********FAIL*********
+
+[[[ Avalanche Tests ]]]
+
+Testing  32-bit keys ->  64-bit hashes,   300000 reps.......... worst bias is 0.580000%
+Testing  40-bit keys ->  64-bit hashes,   300000 reps.......... worst bias is 0.668667%
+Testing  48-bit keys ->  64-bit hashes,   300000 reps.......... worst bias is 0.662000%
+Testing  56-bit keys ->  64-bit hashes,   300000 reps.......... worst bias is 0.607333%
+Testing  64-bit keys ->  64-bit hashes,   300000 reps.......... worst bias is 0.812000%
+Testing  72-bit keys ->  64-bit hashes,   300000 reps.......... worst bias is 0.752667%
+Testing  80-bit keys ->  64-bit hashes,   300000 reps.......... worst bias is 6.393333% !!!!! 
+Testing  88-bit keys ->  64-bit hashes,   300000 reps.......... worst bias is 27.822667% !!!!! 
+Testing  96-bit keys ->  64-bit hashes,   300000 reps.......... worst bias is 59.176667% !!!!! 
+Testing 104-bit keys ->  64-bit hashes,   300000 reps.......... worst bias is 81.499333% !!!!! 
+Testing 112-bit keys ->  64-bit hashes,   300000 reps.......... worst bias is 92.363333% !!!!! 
+Testing 120-bit keys ->  64-bit hashes,   300000 reps.......... worst bias is 97.149333% !!!!! 
