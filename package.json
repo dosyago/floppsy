@@ -1,6 +1,6 @@
 {
   "name": "tifuhash",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Tiny Fast Universal Hash",
   "main": "index.js",
   "scripts": {
@@ -12,14 +12,11 @@
   },
   "keywords": [
     "tifuhash",
+    "hash",
     "universal",
-    "hash",
-    "hash",
-    "function",
+    "smhasher",
     "string",
-    "hash",
     "integer",
-    "hash",
     "avalanche"
   ],
   "author": "Kris <dontmailme@gmail.com> (https://2yago.com)",

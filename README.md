@@ -51,7 +51,7 @@ The test results for SMHasher are in [tifuhash.smhasher.results.txt](https://git
  
  ## Tifuhash limitations and opportunities for improvement
  
-  - current implementations are very slow compared to existing hash functions, even tho the code is simple
+  - current implementations, while still fast, are very slow compared to existing top hash functions, even tho the code of tifuhash is simple
     - this can probably be improved in optimized implementations, but floating point sets a hard limit on how fast tifuhash can be
   - uses floating point extensively, so hashes can differ depending on implementation and architecture
     - this may be able to be improved using techniques developed to allow other floating point dependent calculations to be reproducible across languages and architectures
