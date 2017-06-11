@@ -2,6 +2,24 @@
 
 TIny Fast Universal Hash - that's the aim anyway
 
+# Overview
+
+Tifuhash benefits:
+  - is a novel construction based on continued fractions and Egyptian fractions
+  - passes the two most demanding bias tests in existence: PractRand for RNGs and SMHasher for hash functions
+
+Cons:
+  - current implementations are very slow compared to existing hash functions, even tho the code is simple
+    - this can probably be improved in optimized implementations, but floating point sets a hard limit on how fast tifuhash can be
+  - uses floating point extensively, so hashes can differ depending on implementation and architecture
+    - this may be able to be improved using techniques developed to allow other floating point dependent calculations to be reproducible across languages and architectures
+
+# Testing
+
+Tifuhash passes two key tests for bias: [PracRand](http://pracrand.sourceforge.net/) for RNGs and [SMHasher](https://github.com/aappleby/smhasher) for non-cryptogrpahic hash functions
+
+The test results for SMHasher are in [tifuhash.smhasher.results.txt](https://github.com/dosaygo-coder-0/tifuhash/blob/master/tifuhash.smhasher.results.txt) and the results for PractRand are in [tifuhash.practrand.results.txt](https://github.com/dosaygo-coder-0/tifuhash/blob/master/tifuhash.practrand.results.txt]
+
 # Construction
 
 - Novel: Based on continued fractions and Egyptian fractions
