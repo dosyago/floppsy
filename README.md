@@ -41,4 +41,6 @@ TIny Fast Universal Hash - that's the aim anyway
  
  No API for parameterization as yet, but that will come. Also no built in method for generating real entropy in order to form parameters to universal hash parameterization, but that will probably come, or use code I developed for `dosycrypt`
  
- 
+ # Links
+
+ - [tifuhash on npm](https://www.npmjs.com/package/tifuhash)
