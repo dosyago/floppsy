@@ -1,0 +1,59 @@
+WARNING: Could not set CPU affinity
+-------------------------------------------------------------------------------
+--- Testing Tifu64 (tifuhash 64-bit)
+
+[[[ Sanity Tests ]]]
+
+Verification value 0xBB168BEF : Passed!
+Running sanity check 1..........*********FAIL*********
+Running sanity check 2..........PASS
+
+[[[ Speed Tests ]]]
+
+Bulk speed test - 262144-byte keys
+Alignment  0 -  0.062 bytes/cycle -  178.05 MiB/sec @ 3 ghz
+Alignment  1 -  0.062 bytes/cycle -  178.01 MiB/sec @ 3 ghz
+Alignment  2 -  0.062 bytes/cycle -  177.94 MiB/sec @ 3 ghz
+Alignment  3 -  0.062 bytes/cycle -  178.11 MiB/sec @ 3 ghz
+Alignment  4 -  0.062 bytes/cycle -  178.15 MiB/sec @ 3 ghz
+Alignment  5 -  0.062 bytes/cycle -  178.20 MiB/sec @ 3 ghz
+Alignment  6 -  0.062 bytes/cycle -  177.74 MiB/sec @ 3 ghz
+Alignment  7 -  0.062 bytes/cycle -  177.80 MiB/sec @ 3 ghz
+
+Small key speed test -    1-byte keys -   312.10 cycles/hash
+Small key speed test -    2-byte keys -   320.08 cycles/hash
+Small key speed test -    3-byte keys -   328.81 cycles/hash
+Small key speed test -    4-byte keys -   331.68 cycles/hash
+Small key speed test -    5-byte keys -   338.87 cycles/hash
+Small key speed test -    6-byte keys -   353.24 cycles/hash
+Small key speed test -    7-byte keys -   361.34 cycles/hash
+Small key speed test -    8-byte keys -   366.38 cycles/hash
+Small key speed test -    9-byte keys -   376.63 cycles/hash
+Small key speed test -   10-byte keys -   389.30 cycles/hash
+Small key speed test -   11-byte keys -   404.72 cycles/hash
+Small key speed test -   12-byte keys -   417.37 cycles/hash
+Small key speed test -   13-byte keys -   433.65 cycles/hash
+Small key speed test -   14-byte keys -   452.47 cycles/hash
+Small key speed test -   15-byte keys -   468.74 cycles/hash
+Small key speed test -   16-byte keys -   480.23 cycles/hash
+Small key speed test -   17-byte keys -   500.48 cycles/hash
+Small key speed test -   18-byte keys -   518.10 cycles/hash
+Small key speed test -   19-byte keys -   534.46 cycles/hash
+Small key speed test -   20-byte keys -   547.80 cycles/hash
+Small key speed test -   21-byte keys -   566.48 cycles/hash
+Small key speed test -   22-byte keys -   581.23 cycles/hash
+Small key speed test -   23-byte keys -   596.03 cycles/hash
+Small key speed test -   24-byte keys -   612.46 cycles/hash
+Small key speed test -   25-byte keys -   625.96 cycles/hash
+Small key speed test -   26-byte keys -   644.27 cycles/hash
+Small key speed test -   27-byte keys -   659.71 cycles/hash
+Small key speed test -   28-byte keys -   673.01 cycles/hash
+Small key speed test -   29-byte keys -   690.24 cycles/hash
+Small key speed test -   30-byte keys -   708.60 cycles/hash
+Small key speed test -   31-byte keys -   722.67 cycles/hash
+[[[ Differential Tests ]]]
+Testing 8303632 up-to-5-bit differentials in 64-bit keys -> 64 bit hashes.
+1000 reps, 8303632000 total tests, expecting 0.00 random collisions..........
+0 total collisions, of which 0 single collisions were ignored
+Testing 11017632 up-to-4-bit differentials in 128-bit keys -> 64 bit hashes.
+

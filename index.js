@@ -2,7 +2,7 @@
 "use strict";
 {
   const tifu = {
-    test, evaluate, hash
+    test, evaluate, hash, pad
   };
 
   // Node or browser, either is fine
@@ -59,16 +59,6 @@
 
     function setup( state, init ) {
 
-      // The logic of this is
-      // raising to a fractional power will tend to make a large number smaller
-      // or a small fraction larger
-      // So fractional power raising takes care of two key weaknesses in 
-      // version 1.0.3 - numbers such as : 1e17 and also 1e-17
-      // The addition of init + 1.0/init is probably less necessary now
-      // That we combine the entire float state ( using state32 view )
-      // Instead of discarding the high order bits as we did previously
-      // The point of this summation was to ensure that high order bits ( large numbers )
-      // Could have an effect, by making them proportionately small
       state[0] = init ? Math.pow(init + 1.0/init, 1.0/3) : 3;
       state[1] = init ? Math.pow(init + 1.0/init, 1.0/7) : 1/7;
 
@@ -78,8 +68,9 @@
 
   // Hash Function 
 
-    function hash( msg = '', { out_format : out_format = 'hex' } = {}) {
+    function hash( msg = '', { out_format : out_format = 'hex' } = {}, seed = 0) {
 
+      //console.log( "seed?", seed );
       let number = false;
       if ( typeof msg == 'string' ) {
         msg = msg.split('').map( v => v.charCodeAt(0) );
@@ -94,7 +85,8 @@
       const state32 = new Uint32Array(buf);
 
       // Include the number in state initialization
-      setup( state, number ? msg[0] : null );
+      const init = number ? msg[0] : seed ? seed : null;
+      setup( state, init );
       round( msg, state );
 
       const output = new ArrayBuffer(8);
@@ -111,6 +103,10 @@
       } else if ( out_format == 'binary' ) {
         const bytes = new Uint8Array(output);
         bytes.forEach( v => result += String.fromCharCode(v) );
+      } else if ( out_format == 'bytes' ) {
+        result = new Uint8Array(output);
+      } else if ( out_format = 'uint32s' ) {
+        result = h;
       }
       return result;
 

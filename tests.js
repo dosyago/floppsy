@@ -80,9 +80,8 @@
     const hashbytes = 8;
     const key = new Uint8Array( 256 );
     const hashes = new Uint8Array( 256 * hashbytes );
-    const final = new Uint8Array( hashbytes );
     const spec8 = {
-      out_format: 'uint8array',
+      out_format: 'bytes',
     };
 
 
@@ -94,14 +93,16 @@
       // FIXME : we must decide a way to create include seed value 
       const seed = 256-i;
 
-      const hash = t.hash(key.slice(0,i), spec8 );
+      const hash = t.hash(key.slice(0,i+1), spec8, seed );
       hashes.set( hash, i*hashbytes );
     }
 
     // Then hash the result array
   
-    const final = t.hash(hashes,{ out_format: 'uint32array' });
-
-    return final[0].toString(16);
+    const final_32s = Array.from( t.hash(hashes,{ out_format: 'uint32s' }) );
+    const v_val = `${final_32s.map( v => t.pad( 8, v.toString(16) ) ).join('')}`
+    console.log( `Verification value ${v_val}` );
+    
+    return final_32s[0].toString(16);
   }
 }
