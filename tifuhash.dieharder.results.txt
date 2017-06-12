@@ -1,0 +1,45 @@
+#=============================================================================#
+#            dieharder version 3.31.1 Copyright 2003 Robert G. Brown          #
+#=============================================================================#
+   rng_name    |           filename             |rands/second|
+ file_input_raw|                             xaa|  4.45e+07  |
+#=============================================================================#
+        test_name   |ntup| tsamples |psamples|  p-value |Assessment
+#=============================================================================#
+   diehard_birthdays|   0|       100|     100|0.45961130|  PASSED  
+# The file file_input_raw was rewound 2 times
+      diehard_operm5|   0|   1000000|     100|0.73538757|  PASSED  
+# The file file_input_raw was rewound 4 times
+  diehard_rank_32x32|   0|     40000|     100|0.27402754|  PASSED  
+# The file file_input_raw was rewound 5 times
+    diehard_rank_6x8|   0|    100000|     100|0.95040516|  PASSED  
+# The file file_input_raw was rewound 5 times
+   diehard_bitstream|   0|   2097152|     100|0.14297003|  PASSED  
+# The file file_input_raw was rewound 9 times
+        diehard_opso|   0|   2097152|     100|0.91197244|  PASSED  
+# The file file_input_raw was rewound 12 times
+        diehard_oqso|   0|   2097152|     100|0.63457998|  PASSED  
+# The file file_input_raw was rewound 12 times
+        diehard_oqso|   0|   2097152|     100|0.63457998|  PASSED  
+# The file file_input_raw was rewound 13 times
+         diehard_dna|   0|   2097152|     100|0.17301106|  PASSED  
+# The file file_input_raw was rewound 13 times
+diehard_count_1s_str|   0|    256000|     100|0.16554189|  PASSED  
+# The file file_input_raw was rewound 15 times
+diehard_count_1s_byt|   0|    256000|     100|0.22440217|  PASSED  
+# The file file_input_raw was rewound 15 times
+ diehard_parking_lot|   0|     12000|     100|0.68370150|  PASSED  
+# The file file_input_raw was rewound 16 times
+    diehard_2dsphere|   2|      8000|     100|0.06452108|  PASSED  
+# The file file_input_raw was rewound 16 times
+    diehard_3dsphere|   3|      4000|     100|0.91782278|  PASSED  
+# The file file_input_raw was rewound 20 times
+     diehard_squeeze|   0|    100000|     100|0.12620683|  PASSED  
+# The file file_input_raw was rewound 20 times
+        diehard_sums|   0|       100|     100|0.30492818|  PASSED  
+# The file file_input_raw was rewound 20 times
+        diehard_runs|   0|    100000|     100|0.54453571|  PASSED  
+        diehard_runs|   0|    100000|     100|0.14315056|  PASSED  
+# The file file_input_raw was rewound 22 times
+       diehard_craps|   0|    200000|     100|0.13847424|  PASSED  
+       diehard_craps|   0|    200000|     100|0.84811629|  PASSED  
