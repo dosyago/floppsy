@@ -185,3 +185,22 @@ rgb_minimum_distance|   5|     10000|    1000|0.04543406|  PASSED
       rgb_lagged_sum|  30|   1000000|     100|0.10036907|  PASSED  
 # The file file_input_raw was rewound 1053 times
       rgb_lagged_sum|  31|   1000000|     100|0.00854262|  PASSED 
+# The file file_input_raw was rewound 1113 times
+      rgb_lagged_sum|  32|   1000000|     100|0.00000012|  FAILED  
+# The file file_input_raw was rewound 1113 times
+     rgb_kstest_test|   0|     10000|    1000|0.19808262|  PASSED  
+# The file file_input_raw was rewound 1116 times
+     dab_bytedistrib|   0|  51200000|       1|0.00000000|  FAILED  
+# The file file_input_raw was rewound 1116 times
+             dab_dct| 256|     50000|       1|0.35196684|  PASSED  
+Preparing to run test 207.  ntuple = 0
+# The file file_input_raw was rewound 1118 times
+        dab_filltree|  32|  15000000|       1|0.55705297|  PASSED  
+        dab_filltree|  32|  15000000|       1|0.45352313|  PASSED  
+Preparing to run test 208.  ntuple = 0
+# The file file_input_raw was rewound 1119 times
+       dab_filltree2|   0|   5000000|       1|0.98854835|  PASSED  
+       dab_filltree2|   1|   5000000|       1|0.65978330|  PASSED  
+Preparing to run test 209.  ntuple = 0
+# The file file_input_raw was rewound 1120 times
+        dab_monobit2|  12|  65000000|       1|0.85537449|  PASSED
