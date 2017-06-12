@@ -2,14 +2,47 @@
 
 TIny Fast Universal Hash - that's the aim anyway
 
+[![https://nodei.co/npm/YOUR-MODULE-NAME.png?downloads=true&downloadRank=true&stars=true](https://nodei.co/npm/tifuhash.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/tifuhash)
+[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dosaygo-coder-0/tifuhash/issues)
+
+ ```js
+ const tifu = require('tifuhash');
+ 
+ const message = 'The medium is the message.';
+ const number = 333333333;
+ const float = Math.PI;
+ 
+ tifu.hash( message ); // OK
+ tifu.hash( number ); // OK
+ tifu.hash( float ); // OK
+ tifu.hash( ); // empty message - OK
+ ```
+
 # Overview
 
 Tifuhash's unusual benefits:
-  - is a novel construction based on continued fractions and Egyptian fractions
   - passes PractRand and SMHasher with 0 collissions and all bias less than 1%
+  - is a novel construction based on continued fractions and Egyptian fractions
   - it has been bestowed the backronym "Today I fucked up Hash", and it is most likely mighty pleased 
   - it may be a candidate for a cryptographic hash. In that case, it's relative slowness to other hashes ( only around 100 Mb/s ) could have benefits for applications that key derivation / password hashing.
   - its hashes are architecture dependent due to the quirks of floating point on various platforms and since it magnifies even tiny differences. This could be useful for fingerprinting hashes performed on different platforms. 
+
+The main mixing function is extraordinarily simple ( and it's my aim that it be memorizable ):
+
+```js
+  // Continued Fractions Hashing - q function for state update
+
+    function q( state, val, numerator, denominator ) {
+      // Continued Fraction mixed with Egyptian fraction "Continued Egyptian Fraction"
+      // with denominator = val + pos / state[1]
+      state[0] += numerator / denominator;
+      state[0] = 1.0 / state[0];
+
+      // Standard Continued Fraction with a_i = val, b_i = (a_i-1) + i + 1
+      state[1] += val;
+      state[1] = numerator / state[1];
+    }
+```
 
 # Testing Results
 
