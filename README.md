@@ -2,6 +2,21 @@
 
 TIny Fast Universal Hash - that's the aim anyway
 
+[![https://nodei.co/npm/YOUR-MODULE-NAME.png?downloads=true&downloadRank=true&stars=true](https://nodei.co/npm/tifuhash.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/tifuhash)
+
+ ```js
+ const tifu = require('tifuhash');
+ 
+ const message = 'The medium is the message.';
+ const number = 333333333;
+ const float = Math.PI;
+ 
+ tifu.hash( message ); // OK
+ tifu.hash( number ); // OK
+ tifu.hash( float ); // OK
+ tifu.hash( ); // empty message - OK
+ ```
+
 # Overview
 
 Tifuhash's unusual benefits:
