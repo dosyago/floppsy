@@ -34,7 +34,7 @@
 
         // Chain the Continued Egyptian fraction update step
         // So its a_i are a ratio of ( last_val + last_pos ) / ( val + pos )
-        numerator = denominator;
+        numerator = denominator + 1.0;
       });
 
       state[0] *= Math.PI + state[1];
