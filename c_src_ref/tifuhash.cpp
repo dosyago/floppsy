@@ -41,7 +41,7 @@ FORCE_INLINE void round ( const uint8_t * msg, long len,
 
     q( state, val, numerator, denominator );
 
-    numerator = denominator;
+    numerator = denominator + 1.0;
   }
 
   state[0] *= M_PI + state[1];
