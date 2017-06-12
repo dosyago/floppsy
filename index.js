@@ -94,7 +94,7 @@
       return result;
     }
 
-  // Evaluation ( 16 Mb ) self iteration to output file 
+  // Evaluation ( 128 Mb ) self iteration to output file 
 
     function evaluate( fileName ) {
       try {
@@ -109,7 +109,7 @@
       fileName = fileName || process.argv[2];
       const fs = require('fs'); 
       let batch = 1<<10;
-      let i = 1<<24 >> 3;
+      let i = 1<<28 >> 3;
       let str = '';
       let HASH = '';
 
