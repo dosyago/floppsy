@@ -27,6 +27,23 @@ Tifuhash's unusual benefits:
   - it may be a candidate for a cryptographic hash. In that case, it's relative slowness to other hashes ( only around 100 Mb/s ) could have benefits for applications that key derivation / password hashing.
   - its hashes are architecture dependent due to the quirks of floating point on various platforms and since it magnifies even tiny differences. This could be useful for fingerprinting hashes performed on different platforms. 
 
+The main mixing function is extraordinarily simple ( and it's my aim that it be memorizable ):
+
+```js
+  // Continued Fractions Hashing - q function for state update
+
+    function q( state, val, numerator, denominator ) {
+      // Continued Fraction mixed with Egyptian fraction "Continued Egyptian Fraction"
+      // with denominator = val + pos / state[1]
+      state[0] += numerator / denominator;
+      state[0] = 1.0 / state[0];
+
+      // Standard Continued Fraction with a_i = val, b_i = (a_i-1) + i + 1
+      state[1] += val;
+      state[1] = numerator / state[1];
+    }
+```
+
 # Testing Results
 
 Tifuhash passes two key tests for bias: [PracRand](http://pracrand.sourceforge.net/) for RNGs and [SMHasher](https://github.com/aappleby/smhasher) for non-cryptogrpahic hash functions
