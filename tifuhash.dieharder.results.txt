@@ -173,4 +173,5 @@ rgb_minimum_distance|   5|     10000|    1000|0.04543406|  PASSED
       rgb_lagged_sum|  24|   1000000|     100|0.01593114|  PASSED 
 # The file file_input_raw was rewound 731 times
       rgb_lagged_sum|  25|   1000000|     100|0.00935299|  PASSED  
- 
+ # The file file_input_raw was rewound 780 times
+      rgb_lagged_sum|  26|   1000000|     100|0.00481471|   WEAK   
