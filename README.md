@@ -3,6 +3,7 @@
 TIny Fast Universal Hash - that's the aim anyway
 
 [![https://nodei.co/npm/YOUR-MODULE-NAME.png?downloads=true&downloadRank=true&stars=true](https://nodei.co/npm/tifuhash.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/tifuhash)
+[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dosaygo-coder-0/tifuhash/issues)
 
  ```js
  const tifu = require('tifuhash');
