@@ -149,3 +149,21 @@ rgb_minimum_distance|   5|     10000|    1000|0.04543406|  PASSED
       rgb_lagged_sum|  12|   1000000|     100|0.06406710|  PASSED  
 # The file file_input_raw was rewound 284 times
       rgb_lagged_sum|  13|   1000000|     100|0.17548559|  PASSED 
+# The file file_input_raw was rewound 311 times
+      rgb_lagged_sum|  14|   1000000|     100|0.00000000|  FAILED  
+# The file file_input_raw was rewound 340 times
+      rgb_lagged_sum|  15|   1000000|     100|0.04702025|  PASSED  
+# The file file_input_raw was rewound 371 times
+      rgb_lagged_sum|  16|   1000000|     100|0.13538634|  PASSED
+# The file file_input_raw was rewound 404 times
+      rgb_lagged_sum|  17|   1000000|     100|0.00005261|   WEAK 
+# The file file_input_raw was rewound 438 times
+      rgb_lagged_sum|  18|   1000000|     100|0.01470512|  PASSED  
+# The file file_input_raw was rewound 475 times
+      rgb_lagged_sum|  19|   1000000|     100|0.00005285|   WEAK 
+# The file file_input_raw was rewound 513 times
+      rgb_lagged_sum|  20|   1000000|     100|0.00000193|   WEAK 
+# The file file_input_raw was rewound 553 times
+      rgb_lagged_sum|  21|   1000000|     100|0.08535735|  PASSED 
+# The file file_input_raw was rewound 595 times
+      rgb_lagged_sum|  22|   1000000|     100|0.02737505|  PASSED  
