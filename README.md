@@ -1,6 +1,6 @@
 # tifuhash
 
-TIny Fast Universal Hash - that's the aim anyway
+TIny Floating Point Universal Hash - that's the aim anyway
 
 ## Latest News
 
