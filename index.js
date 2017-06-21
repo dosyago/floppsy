@@ -1,8 +1,9 @@
 // 64 bit hashes
 "use strict";
 {
+  const tifumini32bit = require('./tifumini32bit.js');
   const tifu = {
-    test, evaluate, hash, pad
+    test, evaluate, hash, pad, tifu32 : tifumini32bit
   };
 
   // Node or browser, either is fine
