@@ -127,13 +127,14 @@
 
   // Test
 
-    //test();
+    test();
     function test() {
       console.log( pad( 10, '' ), hash() );
       console.log( pad( 10, 'abc'), hash('abc') );
       console.log( pad( 10, 'abd'), hash('abd') );
       console.log( pad( 10, 'cris'), hash('cris') );
       console.log( pad( 30, "Foo © bar 𝌆 baz ☃ qux"), hash('cris') );
+      tifu.tifu32.test_hash();
     }
 
   // String padding 

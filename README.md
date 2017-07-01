@@ -4,6 +4,10 @@ TIny Floating Point Universal Hash - that's the aim anyway
 
 ## Latest News
 
+#### Now works with Unicode
+
+Using UTF8Str we can get the UTF8 bytes from any Unicode string in JavaScript. Yay! So we can hash Unicdoe without ruining it by using `.charCodeAt(0)` hahaha. :) ;) ;p :D xxx ;p :)xxll
+
 #### Tifu 32-bit is available - As a Gist
 
 You'll notice there are some different constants in use. Who knows? These new constants
