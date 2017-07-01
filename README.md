@@ -4,6 +4,10 @@ TIny Floating Point Universal Hash - that's the aim anyway
 
 ## Latest News
 
+#### Tifu 32 message signature is now fixed
+
+The weirdness is gone. All tests work as expected. It just makes more sense.
+
 #### Now works with Unicode
 
 Using UTF8Str we can get the UTF8 bytes from any Unicode string in JavaScript. Yay! So we can hash Unicdoe without ruining it by using `.charCodeAt(0)` hahaha. :) ;) ;p :D xxx ;p :)xxll
