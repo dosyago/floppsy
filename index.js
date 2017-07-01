@@ -127,7 +127,7 @@
 
   // Test
 
-    test();
+    //test();
     function test() {
       console.log( pad( 10, '' ), hash() );
       console.log( pad( 10, 'abc'), hash('abc') );
