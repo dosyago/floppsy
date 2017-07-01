@@ -1,7 +1,8 @@
 "use strict";
 {
-  //dchest_tests();
+  dchest_tests();
   smhasher_verification_value();
+  standard_test();
 
   function dchest_tests() {
     const t = require('./index.js');
@@ -104,5 +105,10 @@
     console.log( `Verification value ${v_val}` );
     
     return final_32s[0].toString(16);
+  }
+
+  function standard_test() {
+    const t= require('./index.js');
+    t.test();
   }
 }

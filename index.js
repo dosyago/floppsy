@@ -1,6 +1,7 @@
 // 64 bit hashes
 "use strict";
 {
+  const UTF8Str = require('utf8str');
   const tifumini32bit = require('./tifumini32bit.js');
   const tifu = {
     test, evaluate, hash, pad, tifu32 : tifumini32bit
@@ -57,7 +58,7 @@
       //console.log( "seed?", seed );
       let number = false;
       if ( typeof msg == 'string' ) {
-        msg = msg.split('').map( v => v.charCodeAt(0) );
+        msg = new UTF8Str( msg ).bytes;
       } else if ( typeof msg == 'number' ) {
         number = true;
         msg = [ msg ];
@@ -126,11 +127,13 @@
 
   // Test
 
+    //test();
     function test() {
       console.log( pad( 10, '' ), hash() );
       console.log( pad( 10, 'abc'), hash('abc') );
       console.log( pad( 10, 'abd'), hash('abd') );
       console.log( pad( 10, 'cris'), hash('cris') );
+      console.log( pad( 30, "Foo © bar 𝌆 baz ☃ qux"), hash('cris') );
     }
 
   // String padding 
