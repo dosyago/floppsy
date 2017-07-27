@@ -2,9 +2,7 @@
 {
   // Note Tifu32 has different constants for its internal state than Tifu64
   // It still has 128 bits of internal state, it just produces a 32 bit hash
-  // FIXME: does not work with Unicode because `.charCodeAt(0)` does not encompass Unicode
-  // as per the issue already identifying this 
-  // https://github.com/dosaygo-coder-0/tifuhash/issues/1
+
 
   const UTF8Str = require('utf8str');
   const tifu32 = {
