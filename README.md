@@ -17,7 +17,7 @@ Using UTF8Str we can get the UTF8 bytes from any Unicode string in JavaScript. Y
 You'll notice there are some different constants in use. Who knows? These new constants
 might even find their way into the next version of Tifu64.
 
-[Tifu 32 Mini Gist](https://gist.github.com/dosaygo-coder-0/337cc92e9090a5f47f611111e0608f20)
+[Tifu 32 Mini Gist](https://gist.github.com/dosyago-coder-0/337cc92e9090a5f47f611111e0608f20)
 
 A module of the gist is also here in the repo.
 
