@@ -45,8 +45,8 @@ Testing on 1 Gb initially produced 1 FAILED ( rgb_lagged_sums 31 ), and I conclu
 
 Tifuhash's unusual benefits:
   - passes PractRand and SMHasher with 0 collissions and all bias less than 1%
+  - it passed DieHarder
   - is a novel construction based on continued fractions and Egyptian fractions
-  - it has been bestowed the backronym "Today I fucked up Hash", and it is most likely mighty pleased 
   - it may be a candidate for a cryptographic hash. In that case, it's relative slowness to other hashes ( only around 100 Mb/s ) could have benefits for applications that key derivation / password hashing.
   - its hashes are architecture dependent due to the quirks of floating point on various platforms and since it magnifies even tiny differences. This could be useful for fingerprinting hashes performed on different platforms. 
 
