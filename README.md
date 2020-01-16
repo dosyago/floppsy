@@ -70,4 +70,4 @@ Can produce digests of 32, 64 or 128 bits.
 
 ---------------
 
-
+[play with a demo online here](https://codesandbox.io/s/blue-cache-88e9g?fontsize=14&hidenavigation=1&theme=dark)
