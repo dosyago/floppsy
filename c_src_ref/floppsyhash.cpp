@@ -73,7 +73,7 @@ void floppsyhash_64 ( const void * key, int len,
   uint8_t * seedbuf;
   seedbuf = (uint8_t *)&seed;
 
-  setup( state, 0 );
+  setup( state, seed );
   round( seedbuf, 4, state );
   round( data, len, state );
 
