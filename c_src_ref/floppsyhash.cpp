@@ -22,7 +22,7 @@ FORCE_INLINE void q ( double * state, double key_val,
   state[0] += numerator / denominator;
   state[0] = 1.0 / state[0];
 
-  state[1] += ( key_val + M_E ) / M_PI;
+  state[1] += key_val + M_PI;
   state[1] = numerator / state[1];
 }
 
@@ -37,15 +37,12 @@ FORCE_INLINE void round ( const uint8_t * msg, long len,
   // Loop
   for( long i = 0; i < len; i++ ) {
     double val = (double)msg[i];
-    double denominator = (1.0 + val + i) / state[1];
+    double denominator = (M_E * val + i + 1) / state[1];
 
     q( state, val, numerator, denominator );
 
-    numerator = denominator + 1.0;
+    numerator = denominator + 1;
   }
-
-  state[0] *= M_PI + state[1];
-  state[1] *= M_E + state[0];
 }
 
 //---------
