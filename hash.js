@@ -18,7 +18,7 @@
       state[0] = 1.0 / state[0];
 
       // Standard Continued Fraction with a_i = val, b_i = (a_i-1) + i + 1
-      state[1] += val;
+      state[1] += ( val + Math.E ) / Math.PI;
       state[1] = numerator / state[1];
     }
 
@@ -44,8 +44,8 @@
   // Setup the state 
 
     function setup( state, init ) {
-      state[0] = init ? Math.pow(init + 1.0/init, 1.0/3) : 3;
-      state[1] = init ? Math.pow(init + 1.0/init, 1.0/7) : 1/7;
+      state[0] += init ? Math.pow(init + 1.0/init, 1.0/3) : 3;
+      state[1] += init ? Math.pow(init + 1.0/init, 1.0/7) : 1/7;
 
       //console.log( "state", state[0], state[1] );
     }
@@ -67,9 +67,15 @@
       // A new addition, used for combining the high order bits
       const state32 = new Uint32Array(buf);
 
+      const seedbuf = new ArrayBuffer(4);
+      const seed32Arr = new Uint32Array(seedbuf);
+      const seed8Arr = new Uint8Array(seedbuf);
+      seed32Arr[0] = seed;
+
       // Include the number in state initialization
-      const init = number ? msg[0] : seed ? seed : null;
+      const init = seed;
       setup( state, init );
+      round( seed8Arr, state );
       round( msg, state );
 
       const output = new ArrayBuffer(bits == 32 ? 4 : bits == 64 ? 8 : 16);
