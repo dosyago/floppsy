@@ -1,10 +1,18 @@
 # floppsy ![npm downloads](https://img.shields.io/npm/dt/floppsy) ![npm version](https://img.shields.io/npm/v/floppsy)
 
-A tiny, fast hash designed for floating point hardware.
+A tiny, simple and slow hash designed for floating point hardware.
 
 ## construction
 
-constructed using floating point operations, based on continued and egyptian fractions.
+constructed using floating point multiplication, division and addition.
+
+based on continued and egyptian fractions.
+
+*no bit operations used in the making of this hash.*
+
+## accolades
+
+passes [smhasher](https://github.com/rurban/smhasher)
 
 ## disclaimer
 
