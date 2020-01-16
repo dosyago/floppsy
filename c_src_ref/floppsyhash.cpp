@@ -1,5 +1,5 @@
 #include <math.h>
-#include "tifuhash.h"
+#include "floppsyhash.h"
 
 #if defined(_MSC_VER)
 
@@ -58,10 +58,10 @@ FORCE_INLINE void setup ( double * state, double init = 0 )
 }
 
 //---------
-// tifuhash - tiny fast universal hash ( a.k.a today I f&%@!d up hash )
+// floppsyhash - tiny fast universal hash ( a.k.a today I f&%@!d up hash )
 // with 64 bit continued egyptian fractions
 
-void tifuhash_64 ( const void * key, int len,
+void floppsyhash_64 ( const void * key, int len,
                    uint32_t seed, void * out )
 {
   const uint8_t * data = (const uint8_t *)key;

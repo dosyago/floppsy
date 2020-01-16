@@ -97,7 +97,7 @@
 
     // Then hash the result array
   
-    const final_32s = Array.from( t.hash(hashes,{ out_format: 'uint32s' }) );
+    const final_32s = Array.from( t.hash(hashes,{ out_format: 'uint32s', bits: 64 }) );
     const v_val = `${final_32s.map( v => t.pad( 8, v.toString(16) ) ).join('')}`
     console.log( `Verification value ${v_val}` );
     

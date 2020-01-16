@@ -1,6 +1,6 @@
 "use strict";
 
-const tifumini = ( s = 0, m = '', ...n ) => { 
+const floppsymini = ( s = 0, m = '', ...n ) => { 
   s = parseFloat(s); 
   m = Array.from(m).concat(n).map(x => isNaN(parseFloat(x)) ? x.charCodeAt(0) : parseFloat(x));
   let a=new Float64Array(4);
@@ -19,5 +19,5 @@ const tifumini = ( s = 0, m = '', ...n ) => {
   return (h[4]^h[5]^h[6]^h[7])>>>0;
 };
 
-try { module.exports = tifumini } catch( e ) { Object.assign( self, { tifumini } ) }
+try { module.exports = floppsymini } catch( e ) { Object.assign( self, { floppsymini } ) }
 

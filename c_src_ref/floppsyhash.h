@@ -1,5 +1,5 @@
-#ifndef _TIFUHASH_H_
-#define _TIFUHASH_H_
+#ifndef _FLOPPSYHASH_H_
+#define _FLOPPSYHASH_H_
 
 #if defined(_MSC_VER) && (_MSC_VER < 1600)
 
@@ -15,6 +15,6 @@ typedef unsigned __int64 uint64_t;
 
 #endif // !defined(_MSC_VER)
 
-void tifuhash_64          ( const void * key, int len, uint32_t seed, void * out );
+void floppsyhash_64          ( const void * key, int len, uint32_t seed, void * out );
 
-#endif // _TIFUHASH_H_
+#endif // _FLOPPSYHASH_H_

@@ -1,15 +1,15 @@
 "use strict";
 {
-  // Note Tifu32 has different constants for its internal state than Tifu64
+  // Note Floppsy32 has different constants for its internal state than Floppsy64
   // It still has 128 bits of internal state, it just produces a 32 bit hash
 
 
   const UTF8Str = require('utf8str');
-  const tifu32 = {
+  const floppsy32 = {
     hash: f, test_hash
   };
 
-  try { module.exports = tifu32; } catch(e) { Object.assign( self, { tifu32 } ) }
+  try { module.exports = floppsy32; } catch(e) { Object.assign( self, { floppsy32 } ) }
 
   function f( m = '', ...n ) {
     if ( n.length == 0 ) {
