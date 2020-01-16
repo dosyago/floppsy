@@ -1,4 +1,4 @@
---- Testing floppsyhash_64 "Tiny Floatingpoint Unique Hash with continued egyptian fractions" POOR
+--- Testing floppsyhash_64 "slow hash designed for floating point hardware" GOOD
 
 [[[ Avalanche Tests ]]]
 
@@ -20,7 +20,7 @@ Testing 1024-bit keys ->  64-bit hashes, 300000 reps worst bias is 0.834667%
 
 Input vcode 0x00000001, Output vcode 0x00000001, Result vcode 0x00000001
 Verification value is 0x00000001 - Testing took 654.123024 seconds
---- Testing floppsyhash_64 "Tiny Floatingpoint Unique Hash with continued egyptian fractions" POOR
+--- Testing floppsyhash_64 "slow hash designed for floating point hardware" GOOD
 
 [[[ BIC 'Bit Independence Criteria' Tests ]]]
 
@@ -30,7 +30,7 @@ Max bias 0.026880 - (  5 :   4, 27)
 
 Input vcode 0x00000001, Output vcode 0x00000001, Result vcode 0x00000001
 Verification value is 0x00000001 - Testing took 37.440277 seconds
---- Testing floppsyhash_64 "Tiny Floatingpoint Unique Hash with continued egyptian fractions" POOR
+--- Testing floppsyhash_64 "slow hash designed for floating point hardware" GOOD
 
 [[[ Keyset 'Cyclic' Tests ]]]
 
@@ -110,7 +110,7 @@ Testing distribution - Worst bias is the 14-bit window at bit  2 - 0.555%
 
 Input vcode 0x00000001, Output vcode 0x00000001, Result vcode 0x00000001
 Verification value is 0x00000001 - Testing took 1.326724 seconds
---- Testing floppsyhash_64 "Tiny Floatingpoint Unique Hash with continued egyptian fractions" POOR
+--- Testing floppsyhash_64 "slow hash designed for floating point hardware" GOOD
 
 [[[ Diff 'Differential' Tests ]]]
 
@@ -130,7 +130,7 @@ Testing 2796416 up-to-3-bit differentials in 256-bit keys -> 64 bit hashes.
 
 Input vcode 0x00000001, Output vcode 0x00000001, Result vcode 0x00000001
 Verification value is 0x00000001 - Testing took 299.207674 seconds
---- Testing floppsyhash_64 "Tiny Floatingpoint Unique Hash with continued egyptian fractions" POOR
+--- Testing floppsyhash_64 "slow hash designed for floating point hardware" GOOD
 
 [[[ DiffDist 'Differential Distribution' Tests ]]]
 
@@ -842,7 +842,7 @@ Testing collisions (low   8-bit) - Expected    2097152.0, actual 2096896 (1.00x)
 
 Input vcode 0x00000001, Output vcode 0x00000001, Result vcode 0x00000001
 Verification value is 0x00000001 - Testing took 53.506124 seconds
---- Testing floppsyhash_64 "Tiny Floatingpoint Unique Hash with continued egyptian fractions" POOR
+--- Testing floppsyhash_64 "slow hash designed for floating point hardware" GOOD
 
 [[[ 'Hashmap' Speed Tests ]]]
 
@@ -857,7 +857,7 @@ Running fast HashMapTest: 578.422 cycles/op (10.1 stdv)  ....... PASS
 
 Input vcode 0x00000001, Output vcode 0x00000001, Result vcode 0x00000001
 Verification value is 0x00000001 - Testing took 0.425438 seconds
---- Testing floppsyhash_64 "Tiny Floatingpoint Unique Hash with continued egyptian fractions" POOR
+--- Testing floppsyhash_64 "slow hash designed for floating point hardware" GOOD
 
 [[[ MomentChi2 Tests ]]]
 
@@ -868,7 +868,7 @@ KeySeedMomentChi2:	1.3121	PASS
 
 Input vcode 0x00000001, Output vcode 0x00000001, Result vcode 0x00000001
 Verification value is 0x00000001 - Testing took 173.951037 seconds
---- Testing floppsyhash_64 "Tiny Floatingpoint Unique Hash with continued egyptian fractions" POOR
+--- Testing floppsyhash_64 "slow hash designed for floating point hardware" GOOD
 
 [[[ Keyset 'Permutation' Tests ]]]
 
@@ -1085,7 +1085,7 @@ Testing distribution - Worst bias is the 20-bit window at bit 48 - 0.049%
 
 Input vcode 0x00000001, Output vcode 0x00000001, Result vcode 0x00000001
 Verification value is 0x00000001 - Testing took 842.921939 seconds
---- Testing floppsyhash_64 "Tiny Floatingpoint Unique Hash with continued egyptian fractions" POOR
+--- Testing floppsyhash_64 "slow hash designed for floating point hardware" GOOD
 
 [[[ Sanity Tests ]]]
 
@@ -1096,7 +1096,7 @@ Running AppendedZeroesTest .......... PASS
 
 Input vcode 0x00000001, Output vcode 0x00000001, Result vcode 0x00000001
 Verification value is 0x00000001 - Testing took 113.993557 seconds
---- Testing floppsyhash_64 "Tiny Floatingpoint Unique Hash with continued egyptian fractions" POOR
+--- Testing floppsyhash_64 "slow hash designed for floating point hardware" GOOD
 
 [[[ Keyset 'Seed' Tests ]]]
 
@@ -1116,7 +1116,7 @@ Testing distribution - Worst bias is the 19-bit window at bit 21 - 0.037%
 
 Input vcode 0x00000001, Output vcode 0x00000001, Result vcode 0x00000001
 Verification value is 0x00000001 - Testing took 9.982749 seconds
---- Testing floppsyhash_64 "Tiny Floatingpoint Unique Hash with continued egyptian fractions" POOR
+--- Testing floppsyhash_64 "slow hash designed for floating point hardware" GOOD
 
 [[[ Keyset 'Sparse' Tests ]]]
 
@@ -1292,7 +1292,7 @@ Testing distribution - Worst bias is the 18-bit window at bit 24 - 0.077%
 
 Input vcode 0x00000001, Output vcode 0x00000001, Result vcode 0x00000001
 Verification value is 0x00000001 - Testing took 195.453448 seconds
---- Testing floppsyhash_64 "Tiny Floatingpoint Unique Hash with continued egyptian fractions" POOR
+--- Testing floppsyhash_64 "slow hash designed for floating point hardware" GOOD
 
 [[[ Speed Tests ]]]
 
@@ -1343,7 +1343,7 @@ Average                                    610.102 cycles/hash
 
 Input vcode 0x00000001, Output vcode 0x00000001, Result vcode 0x00000001
 Verification value is 0x00000001 - Testing took 260.551748 seconds
---- Testing floppsyhash_64 "Tiny Floatingpoint Unique Hash with continued egyptian fractions" POOR
+--- Testing floppsyhash_64 "slow hash designed for floating point hardware" GOOD
 
 [[[ Keyset 'Text' Tests ]]]
 
@@ -1387,7 +1387,7 @@ Testing distribution - Worst bias is the 20-bit window at bit 58 - 0.021%
 
 Input vcode 0x00000001, Output vcode 0x00000001, Result vcode 0x00000001
 Verification value is 0x00000001 - Testing took 73.775253 seconds
---- Testing floppsyhash_64 "Tiny Floatingpoint Unique Hash with continued egyptian fractions" POOR
+--- Testing floppsyhash_64 "slow hash designed for floating point hardware" GOOD
 
 [[[ Keyset 'TwoBytes' Tests ]]]
 
@@ -1419,7 +1419,7 @@ Testing distribution - Worst bias is the 20-bit window at bit 52 - 0.077%
 
 Input vcode 0x00000001, Output vcode 0x00000001, Result vcode 0x00000001
 Verification value is 0x00000001 - Testing took 9.855767 seconds
---- Testing floppsyhash_64 "Tiny Floatingpoint Unique Hash with continued egyptian fractions" POOR
+--- Testing floppsyhash_64 "slow hash designed for floating point hardware" GOOD
 
 [[[ Keyset 'Window' Tests ]]]
 
@@ -1461,7 +1461,7 @@ Window at  32 - Testing collisions ( 64-bit) - Expected    0.0, actual      0 (0
 
 Input vcode 0x00000001, Output vcode 0x00000001, Result vcode 0x00000001
 Verification value is 0x00000001 - Testing took 206.773053 seconds
---- Testing floppsyhash_64 "Tiny Floatingpoint Unique Hash with continued egyptian fractions" POOR
+--- Testing floppsyhash_64 "slow hash designed for floating point hardware" GOOD
 
 [[[ Keyset 'Zeroes' Tests ]]]
 
