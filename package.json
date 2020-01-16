@@ -2,8 +2,9 @@
   "name": "floppsy",
   "version": "1.1.6",
   "description": "Hash designed for floating point hardware. 32, 64 or 128 bit digests.",
-  "main": "index.js",
+  "main": "node.js",
   "module": "index.js",
+  "unpkg": "index.js",
   "browser": "dist/index.js",
   "browserslist": [
     "> 5%"
