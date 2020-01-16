@@ -14,6 +14,8 @@ based on continued and egyptian fractions.
 
 passes [smhasher](https://github.com/rurban/smhasher)
 
+[see the results for all tests](https://github.com/crislin2046/floppsy/blob/master/smhasher.results.txt)
+
 ## disclaimer
 
 no claims are made regarding the security of this system. 
