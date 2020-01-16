@@ -89,21 +89,24 @@
     for ( let i = 0; i < 256; i++ ) {
       key[i] = i;
 
-      // FIXME : we must decide a way to create include seed value 
       const seed = 256-i;
 
-      const hash = t.hash(key.slice(0,i+1), spec8, seed );
-      hashes.set( hash.slice(0,hashbytes), i*hashbytes );
+      const hash = t.hash(key.slice(0,i), spec8, seed );
+      hashes.set( hash, i*hashbytes );
     }
 
     // Then hash the result array
   
-    const final = t.hash(hashes,{ out_format: 'bytes', bits: 64 });
-    let v_val = (final[0] << 0) | (final[1] << 8) | (final[2] << 16) | (final[3] << 24);
-    v_val = t.pad(8, v_val.toString(16));
-    console.log( `Verification value ${v_val}` );
+    const final32 = t.hash(hashes,{ out_format: 'uint32s', bits: 64 }, 0);
+    const final8 = t.hash(hashes,{ out_format: 'bytes', bits: 64 }, 0);
+    let v_val8 = (final8[0] << 0) | (final8[1] << 8) | (final8[2] << 16) | (final8[3] << 24);
+    v_val8 = t.pad(8, v_val8.toString(16));
+    let v_val32 = t.pad(8, final32[0].toString(16));
+    // note this is different to the C++ value because 
+    // of casting differences between JS and C
+    console.log( `JS Verification value ${v_val8} ${v_val32}` );
     
-    return v_val;
+    return v_val32;
   }
 
   function standard_test() {

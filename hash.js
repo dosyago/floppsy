@@ -42,8 +42,8 @@
   // Setup the state 
 
     function setup( state, init ) {
-      state[0] += init ? Math.pow(init + 1.0/init, 1.0/3) : 3;
-      state[1] += init ? Math.pow(init + 1.0/init, 1.0/7) : 1/7;
+      state[0] += init != 0 ? Math.pow(init + 1.0/init, 1.0/3) : 3;
+      state[1] += init != 0 ? Math.pow(init + 1.0/init, 1.0/7) : 1/7;
 
       //console.log( "state", state[0], state[1] );
     }
@@ -71,8 +71,7 @@
       seed32Arr[0] = seed;
 
       // Include the number in state initialization
-      const init = seed;
-      setup( state, init );
+      setup( state, seed );
       round( seed8Arr, state );
       round( msg, state );
 
