@@ -58,3 +58,6 @@ Can produce digests of 32, 64 or 128 bits.
   x.hash('',{out_format:'uint32s'}); // Uint32Array
 ```
 
+---------------
+
+
