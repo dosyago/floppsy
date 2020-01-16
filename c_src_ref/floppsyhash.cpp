@@ -22,7 +22,7 @@ FORCE_INLINE void q ( double * state, double key_val,
   state[0] += numerator / denominator;
   state[0] = 1.0 / state[0];
 
-  state[1] += key_val;
+  state[1] += key_val + M_PI;
   state[1] = numerator / state[1];
 }
 
@@ -73,7 +73,7 @@ void floppsyhash_64 ( const void * key, int len,
   uint8_t * seedbuf;
   seedbuf = (uint8_t *)&seed;
 
-  setup( state, seed );
+  setup( state, seed32 );
   round( seedbuf, 4, state );
   round( data, len, state );
 
