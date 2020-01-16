@@ -18,7 +18,7 @@
       state[0] = 1.0 / state[0];
 
       // Standard Continued Fraction with a_i = val, b_i = (a_i-1) + i + 1
-      state[1] += ( val + Math.E ) / Math.PI;
+      state[1] += val + Math.PI;
       state[1] = numerator / state[1];
     }
 
@@ -26,9 +26,10 @@
 
     function round( msg, state ) {
       let numerator = 1;
+
       msg.forEach( (val,index) => {
         const pos = index + 1.0;
-        const denominator = (val + pos) / state[1]; 
+        const denominator = (Math.E * val + pos) / state[1]; 
 
         q(state, val, numerator, denominator); 
 
@@ -36,9 +37,6 @@
         // So its a_i are a ratio of ( last_val + last_pos ) / ( val + pos )
         numerator = denominator + 1.0;
       });
-
-      state[0] *= Math.PI + state[1];
-      state[1] *= Math.E + state[0];
     }
 
   // Setup the state 
