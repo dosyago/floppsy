@@ -1,11 +1,10 @@
-"use strict";
-{
+  import t from './index.js';
+
   dchest_tests();
   smhasher_verification_value();
   standard_test();
 
   function dchest_tests() {
-    const t = require('./index.js');
     const cases = [
       {
         run: () => t.hash(0.00000000000000001),
@@ -74,8 +73,6 @@
   }
 
   function smhasher_verification_value() {
-    const t = require('./index.js');
-
     // Copied from <smhasher_repo>/src/KeysetTests.cpp
     
     const hashbytes = 8;
@@ -108,7 +105,5 @@
   }
 
   function standard_test() {
-    const t= require('./index.js');
     t.test();
   }
-}

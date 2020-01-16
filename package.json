@@ -1,32 +1,46 @@
 {
-  "name": "tifuhash",
+  "name": "floppy",
   "version": "1.1.0",
-  "description": "Tiny Floating-Point Universal Hash",
-  "main": "index.js",
+  "description": "Hash designed for floating point hardware. 32, 64 or 128 bit digests.",
+  "main": "node.js",
+  "module": "index.js",
+  "browser": "dist/index.js",
+  "browserslist": [
+    "> 5%"
+  ],
+  "pre-commit": [
+    "build"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node -r esm index.js && node -r esm test.js",
+    "build": "parcel build index.js --no-source-maps"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dosaygo-coder-0/tifuhash.git"
+    "url": "git+https://github.com/crislin2046/floppy.git"
   },
   "keywords": [
-    "tifuhash",
+    "floppy",
+    "floating point",
     "hash",
-    "universal",
     "smhasher",
+    "dieharder",
+    "practrand",
     "string",
     "integer",
     "avalanche"
   ],
-  "author": "Kris <dontmailme@gmail.com> (https://2yago.com)",
+  "author": "@dosy",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/dosaygo-coder-0/tifuhash/issues"
+    "url": "https://github.com/crislin2046/floppy/issues"
   },
-  "homepage": "https://github.com/dosaygo-coder-0/tifuhash#readme",
+  "homepage": "https://github.com/crislin2046/floppy#readme",
   "dependencies": {
+    "esm": "^3.2.25",
     "utf8str": "^1.0.2"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "pre-commit": "^1.2.2"
+  }
 }
