@@ -2,6 +2,10 @@
 
 A tiny, simple and slow hash designed for floating point hardware.
 
+## demo
+
+[play with a demo online here](https://codesandbox.io/s/blue-cache-88e9g?fontsize=14&hidenavigation=1&theme=dark)
+
 ## construction
 
 constructed using floating point multiplication, division and addition.
