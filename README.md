@@ -54,13 +54,13 @@ import floppsy from './web_modules/floppsy.js';
 
 Can produce digests of 32, 64 or 128 bits.
 
-```javascript
-  x.hash(''); // 64 bits the default
-  // 760b4bbc8115967f
-  x.hash('', {bits:32}); // 32 bit digest
-  // f720e23b
-  x.hash('', {bits:128}); // 128 bit digest
-  // 360e8f893ffcbc334023b4ea40f1e195
+```console
+> f.hash('')
+'7f5f8491f0b745bf'
+> f.hash('', {bits:32})
+'7016ca50'
+> f.hash('', {bits:128})
+'3f7f508e3fe034033ff0e269b0c66356'
 ```
 
 *Can also change output format:*
