@@ -38,7 +38,7 @@
   },
   "homepage": "https://github.com/crislin2046/floppsy#readme",
   "dependencies": {
-    "utf8str": "^1.0.2"
+    "utf8str": "^1.0.4"
   },
   "devDependencies": {
     "esm": "^3.2.25",
