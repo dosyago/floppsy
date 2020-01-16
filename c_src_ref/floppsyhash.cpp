@@ -22,7 +22,7 @@ FORCE_INLINE void q ( double * state, double key_val,
   state[0] += numerator / denominator;
   state[0] = 1.0 / state[0];
 
-  state[1] += key_val + M_PI;
+  state[1] += key_val + M_E;
   state[1] = numerator / state[1];
 }
 
