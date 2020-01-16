@@ -80,6 +80,7 @@
     const hashes = new Uint8Array( 256 * hashbytes );
     const spec8 = {
       out_format: 'bytes',
+      bits: hashbytes*8
     };
 
 
@@ -92,16 +93,17 @@
       const seed = 256-i;
 
       const hash = t.hash(key.slice(0,i+1), spec8, seed );
-      hashes.set( hash, i*hashbytes );
+      hashes.set( hash.slice(0,hashbytes), i*hashbytes );
     }
 
     // Then hash the result array
   
-    const final_32s = Array.from( t.hash(hashes,{ out_format: 'uint32s', bits: 64 }) );
-    const v_val = `${final_32s.map( v => t.pad( 8, v.toString(16) ) ).join('')}`
+    const final = t.hash(hashes,{ out_format: 'bytes', bits: 64 });
+    let v_val = (final[0] << 0) | (final[1] << 8) | (final[2] << 16) | (final[3] << 24);
+    v_val = t.pad(8, v_val.toString(16));
     console.log( `Verification value ${v_val}` );
     
-    return final_32s[0].toString(16);
+    return v_val;
   }
 
   function standard_test() {
