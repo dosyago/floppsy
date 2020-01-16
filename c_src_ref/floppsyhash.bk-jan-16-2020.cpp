@@ -53,12 +53,12 @@ FORCE_INLINE void round ( const uint8_t * msg, long len,
 
 FORCE_INLINE void setup ( double * state, double init = 0 ) 
 {
-  state[0] += init != 0 ? pow(init + 1.0/init, 1.0/3) : 3.0;
-  state[1] += init != 0 ? pow(init + 1.0/init, 1.0/7) : 1.0/7;
+  state[0] = init != 0 ? pow(init + 1.0/init, 1.0/3) : 3.0;
+  state[1] = init != 0 ? pow(init + 1.0/init, 1.0/7) : 1.0/7;
 }
 
 //---------
-// floppsyhash
+// floppsyhash - tiny fast universal hash ( a.k.a today I f&%@!d up hash )
 // with 64 bit continued egyptian fractions
 
 void floppsyhash_64 ( const void * key, int len,
@@ -70,11 +70,7 @@ void floppsyhash_64 ( const void * key, int len,
   uint32_t * state32 = (uint32_t*)buf;
   double seed32 = (double)seed;
 
-  uint8_t * seedbuf;
-  seedbuf = (uint8_t *)&seed;
-
-  setup( state, 0 );
-  round( seedbuf, 4, state );
+  setup( state, seed32 );
   round( data, len, state );
 
   uint8_t output [8];

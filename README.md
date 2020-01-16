@@ -42,11 +42,11 @@ Can produce digests of 32, 64 or 128 bits.
 
 ```javascript
   x.hash(''); // 64 bits the default
-  // > 760b4bbc8115967f
+  // 760b4bbc8115967f
   x.hash('', {bits:32}); // 32 bit digest
-  // > f720e23b
+  // f720e23b
   x.hash('', {bits:128}); // 128 bit digest
-  // > 360e8f893ffcbc334023b4ea40f1e195
+  // 360e8f893ffcbc334023b4ea40f1e195
 ```
 
 *Can also change output format:*
