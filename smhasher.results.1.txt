@@ -1397,4 +1397,10 @@ Testing collisions (low   8-bit) - Expected    2097152.0, actual 2096896 (1.00x)
 [[[ MomentChi2 Tests ]]]
 
 Running 1st unseeded MomentChi2 for the low 32bits/step 6 ... 38920301.650555 - 820959.620034
-Running 2nd   seeded MomentChi2 for the low 32bits/step 6 ...
+Running 2nd   seeded MomentChi2 for the low 32bits/step 6 ... 38919518.022237 - 820941.684307
+KeySeedMomentChi2:      0.374001        PASS
+
+
+Input vcode 0x00000001, Output vcode 0x00000001, Result vcode 0x00000001
+Verification value is 0x00000001 - Testing took -1332.901472 seconds
+-------------------------------------------------------------------------------
