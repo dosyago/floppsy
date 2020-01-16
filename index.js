@@ -1,3 +1,3 @@
-import floppy from './hash.js';
-export default floppy;
+import floppsy from './hash.js';
+export default floppsy;
 

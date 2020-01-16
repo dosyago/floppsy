@@ -1,5 +1,5 @@
 {
-  "name": "floppy",
+  "name": "floppsy",
   "version": "1.1.1",
   "description": "Hash designed for floating point hardware. 32, 64 or 128 bit digests.",
   "main": "node.js",
@@ -17,10 +17,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/crislin2046/floppy.git"
+    "url": "git+https://github.com/crislin2046/floppsy.git"
   },
   "keywords": [
-    "floppy",
+    "floppsy",
     "floating point",
     "hash",
     "smhasher",
@@ -33,9 +33,9 @@
   "author": "@dosy",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/crislin2046/floppy/issues"
+    "url": "https://github.com/crislin2046/floppsy/issues"
   },
-  "homepage": "https://github.com/crislin2046/floppy#readme",
+  "homepage": "https://github.com/crislin2046/floppsy#readme",
   "dependencies": {
     "esm": "^3.2.25",
     "utf8str": "^1.0.2"
