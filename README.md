@@ -20,6 +20,8 @@ passes [smhasher](https://github.com/rurban/smhasher)
 
 [see the results for all tests](https://github.com/crislin2046/floppsy/blob/master/smhasher.results.txt)
 
+also see [an independent confirmation of these results](https://github.com/rurban/smhasher/blob/master/doc/floppsyhash_64)
+
 ## disclaimer
 
 no claims are made regarding the security of this system. 
