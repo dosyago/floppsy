@@ -1,6 +1,6 @@
 # :baby_chick: [floppsy](https://github.com/dosyago/floppsy) ![npm downloads](https://img.shields.io/npm/dt/floppsy) ![version](https://img.shields.io/npm/v/floppsy)
 
-A tiny, simple and slow (200Mb/s) hash designed for floating point hardware.
+A tiny, simple and SMHasher-passing slow (200Mb/s) hash designed for floating point hardware.
 
 ## demo
 
