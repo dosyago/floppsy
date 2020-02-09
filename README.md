@@ -108,6 +108,12 @@ no claims are made regarding the security of this system.
 npm i --save floppsy
 ```
 
+## use-cases
+
+- A slow hash for password hashing. 
+- Hashing arrays of numbers (vectors, floating point).
+- As a basis for a cryptographic primitive (such as a PRNG, or symmetric cipher).
+
 ## include
 
 As a Node ES module:
