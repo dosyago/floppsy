@@ -1,4 +1,6 @@
-# :baby_chick: [floppsy](https://github.com/dosyago/floppsy) ![npm downloads](https://img.shields.io/npm/dt/floppsy) ![version](https://img.shields.io/npm/v/floppsy)
+# :baby_chick: [floppsy](https://github.com/dosyago/floppsy) 
+
+#### **[200MB/s SMHasher](https://github.com/rurban/smhasher/blob/master/doc/floppsyhash_64)** [![version](https://img.shields.io/npm/v/floppsy.svg?label=&color=0080FF)](https://github.com/dosyago/floppsy/releases/latest) ![npm downloads](https://img.shields.io/npm/dt/floppsy)
 
 A tiny, simple and SMHasher-passing slow (200Mb/s) hash designed for floating point hardware.
 
