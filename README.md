@@ -28,10 +28,7 @@ also see [an independent confirmation of these results](https://github.com/rurba
 ## c source
 
 ```
-//---------
-// Q function : Continued Egyptian Fraction update function
-
-void q ( double * state, double key_val, 
+FORCE_INLINE void q ( double * state, double key_val, 
          double numerator, double denominator )
 {
   state[0] += numerator / denominator;
@@ -44,7 +41,7 @@ void q ( double * state, double key_val,
 //---------
 // round function : process the message 
 
-void round ( const uint8_t * msg, long len, 
+FORCE_INLINE void round ( const uint8_t * msg, long len, 
             double * state ) 
 {
   double numerator = 1.0;
@@ -63,7 +60,7 @@ void round ( const uint8_t * msg, long len,
 //---------
 // setup function : setup the state
 
-void setup ( double * state, double init = 0 ) 
+FORCE_INLINE void setup ( double * state, double init = 0 ) 
 {
   state[0] += init != 0 ? pow(init + 1.0/init, 1.0/3) : 3.0;
   state[1] += init != 0 ? pow(init + 1.0/init, 1.0/7) : 1.0/7;
@@ -98,7 +95,6 @@ void floppsyhash_64 ( const void * key, int len,
   ((uint32_t*)out)[0] = h[0];
   ((uint32_t*)out)[1] = h[1];
 } 
-
 ```
 ## disclaimer
 
