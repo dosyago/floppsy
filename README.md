@@ -1,6 +1,6 @@
 # :baby_chick: [floppsy](https://github.com/dosyago/floppsy) 
 
-#### **[200MB/s SMHasher](https://github.com/rurban/smhasher/blob/master/doc/floppsyhash_64)** [![version](https://img.shields.io/npm/v/floppsy.svg?label=&color=0080FF)](https://github.com/dosyago/floppsy/releases/latest) ![npm downloads](https://img.shields.io/npm/dt/floppsy)
+#### **[200MB/s SMHasher](https://github.com/rurban/smhasher/blob/master/doc/floppsyhash.txt)** [![version](https://img.shields.io/npm/v/floppsy.svg?label=&color=0080FF)](https://github.com/dosyago/floppsy/releases/latest) ![npm downloads](https://img.shields.io/npm/dt/floppsy)
 
 A tiny, simple and SMHasher-passing slow (200Mb/s) hash designed for floating point hardware.
 
@@ -22,7 +22,7 @@ passes [smhasher](https://github.com/rurban/smhasher)
 
 [see the results for all tests](https://github.com/crislin2046/floppsy/blob/master/smhasher.results.txt)
 
-also see [an independent confirmation of these results](https://github.com/rurban/smhasher/blob/master/doc/floppsyhash_64)
+also see [an independent confirmation of these results](https://github.com/rurban/smhasher/blob/master/doc/floppsyhash.txt)
 
 
 ## c source
