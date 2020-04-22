@@ -2,7 +2,9 @@
 
 #### **[200MB/s SMHasher](https://github.com/rurban/smhasher/blob/master/doc/floppsyhash.txt)** [![version](https://img.shields.io/npm/v/floppsy.svg?label=&color=0080FF)](https://github.com/dosyago/floppsy/releases/latest) ![npm downloads](https://img.shields.io/npm/dt/floppsy)
 
-A tiny, simple and SMHasher-passing slow (200Mb/s) hash designed for floating point hardware.
+A tiny, simple and SMHasher-passing slow (200Mb/s) hash designed for floating point hardware. It's also non-deterministic (different values depend on architecture, due to quirks and differences in floating point implementations). 
+
+[Link to the SUPERCOP ECRYPT benchmark for floppsy](https://bench.cr.yp.to/impl-hash/floppsy.html)
 
 ## demo
 
