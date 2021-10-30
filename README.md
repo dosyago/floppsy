@@ -29,7 +29,7 @@ also see [an independent confirmation of these results](https://github.com/rurba
 
 ## c source
 
-```
+```c++
 FORCE_INLINE void q ( double * state, double key_val, 
          double numerator, double denominator )
 {
